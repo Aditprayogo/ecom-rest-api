@@ -1,5 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+
 plugins {
 	id("org.springframework.boot") version "2.3.4.RELEASE"
 	id("io.spring.dependency-management") version "1.0.10.RELEASE"
@@ -11,6 +12,7 @@ plugins {
 group = "adit.prayogo"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
+
 
 repositories {
 	mavenCentral()
