@@ -4,6 +4,7 @@ import adit.prayogo.ecom.rest.api.model.WebResponse
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.RestControllerAdvice
 import javax.validation.ConstraintViolationException
+import adit.prayogo.ecom.rest.api.util.NotFoundException
 
 @RestControllerAdvice
 class ErrorController {
@@ -18,6 +19,16 @@ class ErrorController {
                 status = "BAD REQUEST",
                 data = constraintViolationException.message!!
         )
+    }
+
+    @ExceptionHandler(value = [NotFoundException::class])
+    fun notFoundException(notFoundException: NotFoundException) : WebResponse<String>{
+        return return WebResponse(
+                code = 404,
+                status = "Not Found",
+                data = "Data Not Found"
+        )
+
     }
 
 }
