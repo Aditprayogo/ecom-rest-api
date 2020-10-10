@@ -4,8 +4,8 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "id" : "A0002",
-  "name" : "Macbook pro 2019",
+  "id" : "A0004",
+  "name" : "Sendal Jepit",
   "price" : 60000000,
   "quantity" : 1
 }
@@ -53,6 +53,15 @@ Accept: application/json
 
 ### List product API
 GET http://localhost:8080/api/products
+Accept: application/json
+
+
+### List product API With size parameter
+GET http://localhost:8080/api/products?size=2
+Accept: application/json
+
+### List product API With size and page parameter
+GET http://localhost:8080/api/products?size=2&page=1
 Accept: application/json
 
 
