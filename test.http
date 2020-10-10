@@ -4,11 +4,12 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "id" : "A0001",
-  "name" : "Macbook pro 2015",
-  "price" : 30000000,
+  "id" : "A0002",
+  "name" : "Macbook pro 2019",
+  "price" : 60000000,
   "quantity" : 1
 }
+
 
 ### get product API
 GET http://localhost:8080/api/products/A0001
@@ -18,7 +19,9 @@ Accept: application/json
 GET http://localhost:8080/api/products/A00a01
 Accept: application/json
 
-### update product API (SALAH)
+
+
+### update product API )
 PUT http://localhost:8080/api/products/A0001
 Content-Type: application/json
 Accept: application/json
@@ -29,6 +32,28 @@ Accept: application/json
   "quantity" : 2
 }
 
+### update product API (SALAH)
+PUT http://localhost:8080/api/products/A0001
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name" : "Macbook pro 2015 murah meriah",
+  "price" : 123,
+  "quantity" : 3
+}
+
+
+
+### DELETE
+DELETE http://localhost:8080/api/products/A00010
+Accept: application/json
+
+
+
+### List product API
+GET http://localhost:8080/api/products
+Accept: application/json
 
 
 
