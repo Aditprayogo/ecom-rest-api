@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.RestControllerAdvice
 import javax.validation.ConstraintViolationException
 import adit.prayogo.ecom.rest.api.util.NotFoundException
+import adit.prayogo.ecom.rest.api.util.UnAuthorizedException
 
 @RestControllerAdvice
 class ErrorController {
@@ -27,6 +28,16 @@ class ErrorController {
                 code = 404,
                 status = "Not Found",
                 data = "Data Not Found"
+        )
+
+    }
+
+    @ExceptionHandler(value = [UnAuthorizedException::class])
+    fun unAutohorized(unAuthorizedException: UnAuthorizedException) : WebResponse<String>{
+        return return WebResponse(
+                code = 401,
+                status = "UNAUTHORIZED",
+                data = "Please put your X-API-KEY"
         )
 
     }

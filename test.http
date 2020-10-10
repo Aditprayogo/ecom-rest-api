@@ -1,5 +1,6 @@
 ### create product
 POST http://localhost:8080/api/products
+X-Api-Key: SECRET
 Content-Type: application/json
 Accept: application/json
 
@@ -13,10 +14,12 @@ Accept: application/json
 
 ### get product API
 GET http://localhost:8080/api/products/A0001
+X-Api-Key: SECRET
 Accept: application/json
 
 ### get product API (SALAH)
 GET http://localhost:8080/api/products/A00a01
+X-Api-Key: SECRET
 Accept: application/json
 
 
@@ -53,6 +56,7 @@ Accept: application/json
 
 ### List product API
 GET http://localhost:8080/api/products
+X-Api-Key: SECRET
 Accept: application/json
 
 
@@ -62,6 +66,7 @@ Accept: application/json
 
 ### List product API With size and page parameter
 GET http://localhost:8080/api/products?size=2&page=1
+X-Api-Key: SECRET
 Accept: application/json
 
 
