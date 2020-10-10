@@ -3,6 +3,7 @@ package adit.prayogo.ecom.rest.api.service.impl
 import adit.prayogo.ecom.rest.api.entity.Product
 import adit.prayogo.ecom.rest.api.model.CreateProductRequest
 import adit.prayogo.ecom.rest.api.model.ProductResponse
+import adit.prayogo.ecom.rest.api.model.UpdateProductRequest
 import adit.prayogo.ecom.rest.api.repository.ProductRepository
 import adit.prayogo.ecom.rest.api.service.ProductService
 import adit.prayogo.ecom.rest.api.util.NotFoundException
@@ -46,6 +47,27 @@ class ProductServiceImpl(
         }else {
             throw NotFoundException()
         }
+    }
+
+    override fun update(id: String, updateProductRequest: UpdateProductRequest): ProductResponse {
+
+        val product = productRepository.findByIdOrNull(id)
+
+        if (product == null) {
+            throw NotFoundException()
+        }
+
+        product?.apply {
+            name = updateProductRequest.name!!
+            price = updateProductRequest.price!!
+            quantity = updateProductRequest.quantity!!
+            updatedAt = Date()
+        }
+
+        //save to db
+        productRepository.save(product)
+
+        return extractProductToProductResponse(product)
     }
 
     private fun extractProductToProductResponse(product: Product) : ProductResponse {

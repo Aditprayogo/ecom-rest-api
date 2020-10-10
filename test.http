@@ -18,5 +18,17 @@ Accept: application/json
 GET http://localhost:8080/api/products/A00a01
 Accept: application/json
 
+### update product API (SALAH)
+PUT http://localhost:8080/api/products/A0001
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name" : "Macbook pro 2015 murah",
+  "price" : 123,
+  "quantity" : 2
+}
+
+
 
 
